@@ -45,5 +45,20 @@ namespace 整体窗体测试项目
         {
 
         }
+        public static string S5 { set; get; }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CacheApi.CacheInsert("zhujian", textBox1.Text);
+            CacheApi.CacheInsert("zhujian1", textBox2.Text);
+            CacheApi.CacheInsert("zhujian2", textBox3.Text);
+            //string s1 = textBox1.Text;
+            //string s2 = textBox2.Text;
+            //string s3 = textBox3.Text;
+            //s1 = TestApi.A1;
+            //s2 = TestApi.A2;
+            //s3 = TestApi.A3;
+            //TestApi.KoNginx(S5);
+            Close();
+        }
     }
 }

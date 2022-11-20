@@ -141,6 +141,7 @@
     </Compile>
     <Compile Include="SpriderInfo.cs" />
     <Compile Include="SpriderInfoApi.cs" />
+    <Compile Include="TestApi.cs" />
     <Compile Include="WebSiteInfo.cs" />
     <Compile Include="WebSiteInfoApi.cs" />
     <EmbeddedResource Include="Form1.resx">

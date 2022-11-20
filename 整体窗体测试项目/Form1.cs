@@ -646,5 +646,34 @@ namespace 整体窗体测试项目
             //Test2();
         }
 
+        private void button19_Click(object sender, EventArgs e)
+        {
+            //通过缓存获取另一个窗体中的数据
+            object o = CacheApi.CacheValue("zhujian");
+            object o1 = CacheApi.CacheValue("zhujian1");
+            object o2 = CacheApi.CacheValue("zhujian2");
+            string s = string.Empty;
+            if (o != null)
+            {
+                s = o.ToString();
+            }
+            MessageBox.Show(s);
+            Console.WriteLine(s);
+            Console.WriteLine(o1);
+            Console.WriteLine(o2);
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox4.Text)&&string.IsNullOrEmpty(textBox5.Text))
+            {
+                MessageBox.Show("为空");
+                return;
+            }
+            else
+            {
+                MessageBox.Show("123");
+            }
+        }
     }
 }
