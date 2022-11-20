@@ -33,6 +33,7 @@ namespace 整体窗体测试项目
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button19 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
@@ -60,23 +61,32 @@ namespace 整体窗体测试项目
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button20 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button19 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button20 = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button21 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button22 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -84,6 +94,7 @@ namespace 整体窗体测试项目
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -121,6 +132,16 @@ namespace 整体窗体测试项目
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(461, 311);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(97, 61);
+            this.button19.TabIndex = 20;
+            this.button19.Text = "通过缓存获取数据";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // button18
             // 
@@ -386,6 +407,37 @@ namespace 整体窗体测试项目
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(391, 99);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(97, 44);
+            this.button20.TabIndex = 3;
+            this.button20.Text = "判断多个空";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(177, 213);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(154, 25);
+            this.textBox6.TabIndex = 2;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(177, 160);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(154, 25);
+            this.textBox5.TabIndex = 1;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(177, 100);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(154, 25);
+            this.textBox4.TabIndex = 0;
+            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -425,46 +477,77 @@ namespace 整体窗体测试项目
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button19
+            // tabPage4
             // 
-            this.button19.Location = new System.Drawing.Point(461, 311);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(97, 61);
-            this.button19.TabIndex = 20;
-            this.button19.Text = "通过缓存获取数据";
-            this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
+            this.tabPage4.Controls.Add(this.panel2);
+            this.tabPage4.Controls.Add(this.button22);
+            this.tabPage4.Controls.Add(this.panel1);
+            this.tabPage4.Controls.Add(this.button21);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(878, 428);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // button21
             // 
-            this.textBox4.Location = new System.Drawing.Point(177, 100);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(154, 25);
-            this.textBox4.TabIndex = 0;
+            this.button21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button21.Location = new System.Drawing.Point(3, 3);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(872, 28);
+            this.button21.TabIndex = 0;
+            this.button21.Text = "展开";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
-            // textBox5
+            // panel1
             // 
-            this.textBox5.Location = new System.Drawing.Point(177, 160);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(154, 25);
-            this.textBox5.TabIndex = 1;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 31);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(872, 100);
+            this.panel1.TabIndex = 1;
             // 
-            // textBox6
+            // button22
             // 
-            this.textBox6.Location = new System.Drawing.Point(177, 213);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(154, 25);
-            this.textBox6.TabIndex = 2;
+            this.button22.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button22.Location = new System.Drawing.Point(3, 131);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(872, 28);
+            this.button22.TabIndex = 2;
+            this.button22.Text = "button22";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
-            // button20
+            // panel2
             // 
-            this.button20.Location = new System.Drawing.Point(391, 99);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(97, 44);
-            this.button20.TabIndex = 3;
-            this.button20.Text = "判断多个空";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(3, 159);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(872, 123);
+            this.panel2.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(341, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(350, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 15);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "label3";
             // 
             // Form1
             // 
@@ -486,6 +569,11 @@ namespace 整体窗体测试项目
             this.tabPage3.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -532,6 +620,13 @@ namespace 整体窗体测试项目
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Label label2;
     }
 }
 

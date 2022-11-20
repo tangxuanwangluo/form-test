@@ -69,6 +69,7 @@ namespace 整体窗体测试项目
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            panel1.Visible = false;
             code = GenerateCheckCode();
             Bitmap image = CreateCheckCodeImage(code, 64, 30);//长高
             pictureBox1.Image = image;
@@ -663,7 +664,6 @@ namespace 整体窗体测试项目
             Console.WriteLine(o1);
             Console.WriteLine(o2);
         }
-
         private void button20_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBox4.Text)&&string.IsNullOrEmpty(textBox5.Text))
@@ -675,6 +675,25 @@ namespace 整体窗体测试项目
             {
                 MessageBox.Show("123");
             }
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = !panel1.Visible;
+            //panel1.Visible = false;
+            //if (panel1.Visible == false)
+            //{
+            //    button21.Text = "展开";
+            //}
+            //if(button21.Text == "展开")
+            //{
+            //    panel1.Visible = true;
+            //}
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = !panel2.Visible;
         }
     }
 }
