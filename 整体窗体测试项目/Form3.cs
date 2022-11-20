@@ -12,24 +12,18 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Timers;
 using System.Windows.Forms;
 using HtmlDocument = HtmlAgilityPack.HtmlDocument;
-using Timer = System.Windows.Forms.Timer;
 
 namespace 整体窗体测试项目
 {
-    public partial class Form1 : Form
+    public partial class Form3 : Form
     {
         private Process p = new Process();
-        Form2 b = null;//接收窗体二
-
-        public Form1()
+        public static Form1 s23;
+        public Form3()
         {
             InitializeComponent();
-            b = new Form2();//实例化b窗体
-            b.MyEvent += new Form2.MyDelegate(b_MyEvent);//监听b窗体事件
-
             Control.CheckForIllegalCrossThreadCalls = false;
             p.StartInfo.FileName = "cmd.exe";
             p.StartInfo.UseShellExecute = false;
@@ -67,7 +61,7 @@ namespace 整体窗体测试项目
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form3_Load(object sender, EventArgs e)
         {
             code = GenerateCheckCode();
             Bitmap image = CreateCheckCodeImage(code, 64, 30);//长高
@@ -355,7 +349,7 @@ namespace 整体窗体测试项目
                 HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes("//a/@href");//连同js一同提取出来 |//script
                 Console.WriteLine(nodes);
                 HtmlNode node;
-                if(nodes == null)
+                if (nodes == null)
                 {
                     Console.WriteLine("为空");
                 }
@@ -368,16 +362,16 @@ namespace 整体窗体测试项目
                         string s2 = attr.Value;
                         string s3 = attr.ValueLength.ToString();
                         Console.WriteLine(s2);
-                        
+
                     }
                 }
                 robot_GetPublicContactEvent();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
-            
+
         }
         /// <summary>
         /// 这个主要是用于针对TREEVIEW添加根节点时无法添加的情况
@@ -418,7 +412,7 @@ namespace 整体窗体测试项目
 
             treeView1.Nodes[i].Nodes.Add("1 子节点");
             treeView1.Nodes[i].Nodes.Add(new TreeNode("312312"));
-       
+
             treeView1.Nodes.Add("子域名"); i++;
             treeView1.Nodes[i].Nodes.Add("0 子节点");
 
@@ -489,7 +483,7 @@ namespace 整体窗体测试项目
             {
                 Console.WriteLine(PortScanApi.ExOptions);
             }
-            
+
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -520,7 +514,7 @@ namespace 整体窗体测试项目
             PortScanApi.Purl = "https://www.baidu.co";
             WebSiteInfo.WebSiteInfos(WebSiteInfoApi.H1);
             string s1 = WebSiteInfoApi.Ipaddress;//字符串s1 主要是用于获取IP地址，如果说为空的话 肯定由于什么错误所引发
-            if(s1 == null)
+            if (s1 == null)
             {
                 Console.WriteLine(WebSiteInfoApi.Exoptions);
             }
@@ -528,7 +522,7 @@ namespace 整体窗体测试项目
             //获取网站标题
             WebSiteInfo.WebSiteTitleInfo(WebSiteInfoApi.H1);
             string s2 = WebSiteInfoApi.WebInfotitles;
-            if(s2 == null)
+            if (s2 == null)
             {
                 Console.WriteLine(WebSiteInfoApi.Exoptions);//输出错误信息
             }
@@ -536,7 +530,7 @@ namespace 整体窗体测试项目
             //获取网站服务信息
             WebSiteInfo.WebSiteServiceInfo(WebSiteInfoApi.H1);
             string s3 = WebSiteInfoApi.WebServiceInfo;
-            if(s3 == null)
+            if (s3 == null)
             {
                 Console.WriteLine(WebSiteInfoApi.Exoptions);
             }
@@ -552,7 +546,7 @@ namespace 整体窗体测试项目
             SpriderInfo.SpiderScan(SpriderInfoApi.A1);
             richTextBox1.Text = SpriderInfoApi.UrlsHtmlCode;
             string s1 = SpriderInfoApi.UrlsInfo;
-            if(s1 == null)
+            if (s1 == null)
             {
                 Console.WriteLine(SpriderInfoApi.UrlsExoptions);
             }
@@ -580,7 +574,7 @@ namespace 整体窗体测试项目
             object o = CacheApi.CacheValue("zhujian");
             object o1 = CacheApi.CacheValue("zhujian1");
             string s = string.Empty;
-            if(o != null)
+            if (o != null)
             {
                 s = o.ToString();
             }
@@ -596,49 +590,45 @@ namespace 整体窗体测试项目
 
         private void button17_Click(object sender, EventArgs e)
         {
-            //打开窗体二后触发B事件
-            b.ShowDialog();
-            //Form2 s1 = new Form2();
-            //s1.StartPosition = FormStartPosition.CenterScreen;
-            //s1.ShowDialog();
+            //打开新窗体
+            Form2 s1 = new Form2();
+            s1.StartPosition = FormStartPosition.CenterScreen;
+            s1.ShowDialog();
         }
-        /// <summary>
-        /// timer1 事件执行后执行需要做的事情
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
+
 
             if (timer1.Enabled == true)
             {
                 timer1.Enabled = false;
                 timer1.Stop();
+                System.Threading.Thread.Sleep(500);
                 Test3();
             }
             //MessageBox.Show("123");
 
         }
+        public void Test2()
+        {
+            button18.PerformClick();
+            this.button18_Click(null, null);
+        }
         public void Test3()
         {
-            string s1 = PortScanApi.S1;
-            MessageBox.Show(s1);
-            this.tabControl1.SelectedTab = tabPage2;
+
+            this.tabControl1.SelectedTab = tabPage3;
         }
         public static string Test(string s1)
         {
             //窗体关闭之后的事件
             Form1 s2 = new Form1();
-            s2.textBox1.Text = "123";
-            //s2.button18_Click(null,null);
+            //s2.button18_Click(null, null);
             //s2.timer1.Start();
             return s1;
         }
-        void b_MyEvent()
-        {
-            timer1.Start();
-        }
+
         private void button18_Click(object sender, EventArgs e)
         {
             timer1.Start();
@@ -646,5 +636,19 @@ namespace 整体窗体测试项目
             //Test2();
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
