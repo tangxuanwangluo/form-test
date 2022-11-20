@@ -69,6 +69,19 @@ namespace 整体窗体测试项目
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // 创建datagridview 事件中的数据
+
+            if(dataGridView1.Rows.Count < 1)
+            {
+                return;//判断没有内容时 直接pass
+            }
+
+            string s1 = "123";
+            string s2 = "456";
+            string s3 = "789";
+            string s4 = "110";
+            dataGridView1.Rows.Add(s1,s2,s3,s4);
+
             panel1.Visible = false;
             code = GenerateCheckCode();
             Bitmap image = CreateCheckCodeImage(code, 64, 30);//长高
@@ -694,6 +707,30 @@ namespace 整体窗体测试项目
         private void button22_Click(object sender, EventArgs e)
         {
             panel2.Visible = !panel2.Visible;
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dataGridView1.NewRowIndex < 1)
+            {
+                //读取选中一行的内容
+            }
+        }
+
+        private void 查看ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //查看事件触发
+            
+            if(dataGridView1.Rows.Count < 0)
+            {
+                MessageBox.Show("123");
+            }
+            else
+            {
+                MessageBox.Show("未选择");
+                return;
+            }
+
         }
     }
 }
