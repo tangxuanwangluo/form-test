@@ -11,7 +11,7 @@ using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 
 namespace 整体窗体测试项目
 {
-    class SpriderInfo
+    public class SpriderInfo
     {
         /// <summary>
         /// Sec-scan 第一层网络爬虫

@@ -69,6 +69,7 @@ namespace 整体窗体测试项目
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.tabControl1.SelectedTab = tabPage2;
             // 创建datagridview 事件中的数据
 
             if(dataGridView1.Rows.Count < 1)
@@ -579,7 +580,6 @@ namespace 整体窗体测试项目
             Console.WriteLine("输出爬虫日志");
             AppLog.WriteInfo("输出爬虫日志", true);
             Console.WriteLine("输出爬虫日志");
-
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -624,8 +624,6 @@ namespace 整体窗体测试项目
         /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
-
             if (timer1.Enabled == true)
             {
                 timer1.Enabled = false;
@@ -730,6 +728,43 @@ namespace 整体窗体测试项目
                 MessageBox.Show("未选择");
                 return;
             }
+
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            //PortScanApi.Purl = textBox7.Text;
+            //Houduan.Honkon(HouduanAPi.A1);
+            //string s1 = HouduanAPi.Status;//字符串s1 主要是用于获取IP地址，如果说为空的话 肯定由于什么错误所引发
+            //if (s1 == null)
+            //{
+            //    Console.WriteLine(HouduanAPi.ExOptions);
+            //}
+            //Console.WriteLine("域名：" + PortScanApi.Purl + "的IP地址为：" + s1);
+            HouduanAPi.Curl = textBox7.Text;//设置域名
+            string s1 = HouduanAPi.Curl;//把域名定义为字符串
+            if (s1.Length < 1)//判断是否存在域名
+            {
+                MessageBox.Show("获取到的域名为空");
+                return;
+            }
+            Console.WriteLine("网站地址：" + s1);//输出定义的字串
+
+
+            //执行判断网站是否能打开
+            Houduan.Honkon(HouduanAPi.A1);//定义实参
+            string s2 = HouduanAPi.Status;//定义判断网站是否能打开的状态
+            if (s2 == "网站可访问")
+            {
+                Console.WriteLine("网站状态：" + s2.ToString());//输出正确或错误的状态
+            }
+            else
+            {
+                string s5 = HouduanAPi.ExOptions;
+                Console.WriteLine(s5);//不能打开情况下，去输出错误信息
+                return;
+            }
+            //Console.WriteLine("网站状态：" + s2);//输出正确或错误的状态
 
         }
     }

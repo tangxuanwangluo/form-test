@@ -43,7 +43,8 @@ namespace 整体窗体测试项目
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            Form1 s1 = new Form1();
+            s1.Test3();
         }
         public static string S5 { set; get; }
         private void button2_Click(object sender, EventArgs e)
