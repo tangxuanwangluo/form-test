@@ -14,7 +14,7 @@ namespace 整体窗体测试项目
     public class SpriderInfo
     {
         /// <summary>
-        /// Sec-scan 第一层网络爬虫
+        /// Sec-scan 第一层网络爬虫，提取连接
         /// </summary>
         /// <param name="spider"></param>
         /// <returns></returns>
@@ -34,7 +34,7 @@ namespace 整体窗体测试项目
                 SpriderInfoApi.UrlsHtmlCode = html;
                 HtmlDocument doc = new HtmlDocument();
                 doc.LoadHtml(SpriderInfoApi.UrlsHtmlCode);
-                HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes("//a/@href");//连同js一同提取出来 |//script
+                HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes("//a/@href");
                 HtmlNode node;
                 for (int i = 0; i < nodes.Count; i++)
                 {

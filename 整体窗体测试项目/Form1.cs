@@ -767,5 +767,31 @@ namespace 整体窗体测试项目
             //Console.WriteLine("网站状态：" + s2);//输出正确或错误的状态
 
         }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string url = "https://sec-scan.srcbug.net/yuanlaishisongxian.php";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.Method = "HEAD";
+                request.AllowAutoRedirect = false;
+                HttpWebResponse reponse = (HttpWebResponse)request.GetResponse();
+                string cc = reponse.GetResponseHeader("Server");
+                string c1 = reponse.GetResponseHeader("vary");
+                string c2 = reponse.GetResponseHeader("date");
+                string c3 = reponse.GetResponseHeader("link");
+                string c4 = reponse.GetResponseHeader("set-cookie");
+                Console.WriteLine("服务名称：" + cc);
+                Console.WriteLine("vary：" + c1);
+                Console.WriteLine("date：" + c2);
+                Console.WriteLine("link：" + c3);
+                Console.WriteLine("set-cookie：" + c4);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
     }
 }

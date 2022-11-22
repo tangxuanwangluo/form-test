@@ -89,6 +89,7 @@ namespace 整体窗体测试项目
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.imageList3 = new System.Windows.Forms.ImageList(this.components);
+            this.button24 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -349,6 +350,7 @@ namespace 整体窗体测试项目
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button24);
             this.tabPage2.Controls.Add(this.textBox7);
             this.tabPage2.Controls.Add(this.button23);
             this.tabPage2.Controls.Add(this.button16);
@@ -373,7 +375,7 @@ namespace 整体窗体测试项目
             // 
             // button23
             // 
-            this.button23.Location = new System.Drawing.Point(588, 148);
+            this.button23.Location = new System.Drawing.Point(475, 25);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(162, 83);
             this.button23.TabIndex = 5;
@@ -659,6 +661,16 @@ namespace 整体窗体测试项目
             this.imageList3.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList3.Images.SetKeyName(0, "6.png");
             // 
+            // button24
+            // 
+            this.button24.Location = new System.Drawing.Point(584, 160);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(162, 83);
+            this.button24.TabIndex = 7;
+            this.button24.Text = "获取网站多信息测试";
+            this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -750,6 +762,7 @@ namespace 整体窗体测试项目
         private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Button button24;
     }
 }
 
